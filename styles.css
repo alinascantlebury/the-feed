@@ -1,93 +1,154 @@
-
 @font-face {
-  font-family: Rascal;
-  src: url(font/rascal/RASCAL__.TTF);
-}
-@font-face {
-  font-family: Filxgirl;
-  src: url(font/Filxgirl/Filxgirl.TTF);
+    font-family: Merrriweather;
+    src: url(fonts/Merriweather/Merriweather-VariableFont_opsz\,wdth\,wght.ttf);
 }
 
-
-body{
-	margin: auto;
-  text-align: center;
-	width: 80%;
-	background-color: #ad3244;
-  padding-top: 5%;
-  padding-bottom: 5%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-	color:rgba(255, 225, 92, 0.77);
-  font-size: 50px;
-  font-family: Rascal;
+body {
+    border: 50px solid rgb(255, 255, 255);
+    zoom: 0.60;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* or center if you want vertical centering too */
 }
 
-
-h2 {
-  font-family: "Lora", serif;    
-  font-weight: normal; 
-  font-size: 20px;
-	color:#b5bb86
-  }
-
-h3{
-  font-family: "Lora", serif;    
-  font-weight: normal; 
-  font-size: 15px;
-	color:#b5bb86
-}
-
-#me{
-  font-family: Filxgirl;
-  font-size: 40px;
-  position: relative;
-  left: 30%;
-}
-
-.name{
-  position: static;
-  left: 10%;
+h1{
+    color: #000;
+    text-align: center;
+    font-family: Merriweather;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
 }
 
 
-
-.container img {
-    border: 5px solid rgba(255, 225, 92, 0.77); 
-  }
-.container img:hover {
-    box-shadow: 0px 0px 15px 5px  rgba(255, 225, 92, 0.77);
-    width: 120%;
-    filter: hue-rotate(90deg);
-
-}
-
-#alina:hover{
-  width: 100%
-}
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(50px, auto);
-    color: #e0e8a0;
-    gap: 50px;
-    margin: center;
-    position: relative;
-    top: 20%;
-    left: 20%;
-    width: 65%;
-  }
+    grid-template-columns: repeat(3, 825px);
+    grid-template-rows: repeat(11, 640px);
+    gap: 5px;
+    max-width: 100%;
+    margin: 0 auto;
+    justify-self: center;
+}
 
-  a {
-    color:#e0e8a0;
-      font-family: "Lora", serif;
-      font-weight: normal; 
-      font-size: 20px;
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+
+.text-item {
+    color: #000;
+    text-align: center;
+    font-family: Merriweather;
+    font-size: 300px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 85%;
+    letter-spacing: -20px;
+}
+
+.text-item-me {
+    color: #000;
+    text-align: center;
+    font-family: Merriweather;
+    font-size: 250px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -20px;
+}
+
+.image-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.grid-item > .image-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container img:hover {
+    filter: grayscale();
+}
+
+a:hover {
+    color: rgba(0, 128, 0, 0.714);
+}
+
+a {
+    color: #790b1cef;
+}
+
+a:visited{
+    color: #ad3232ef;
+}
+
+a:hover{
+    color: #046e16ef;
+}
+
+.scrolling-text-wrapper {
+  grid-column: 1 / -1;     
+  height: 200px;            
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;        
+}
+
+#scrolling-text-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.scrolling-text {
+  display: inline-block;
+  font-family: Merriweather, serif;
+  font-size: 100px;       
+  font-weight: 700;
+  color: #000;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); 
   }
-  
-  a:hover {
-    color: rgb(179, 167, 0);
-      background-color: bisque;
-      box-shadow: 0px 0px 15px 5px  rgba(255, 225, 92, 0.77);
+  100% {
+    transform: translateX(-100%);
   }
+}
